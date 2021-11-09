@@ -1,0 +1,58 @@
+
+
+
+<div class="display-flex mt-5">
+    <div class="cover-signup">
+        <img  src="../img/19362653.jpg" alt="cover" class="cover-signup-pic">
+    </div>
+    <div class="signup-card" >
+        <div class="card no-border">
+            <div class="card-header card-header-signup text-center no-border">
+                <h5 class="card-title card-title-signup mt-1"> SignUp form</h5>
+            </div>
+            <% if(typeof errors != "undefined"){ %>
+                <% errors.forEach((error) => { %>
+                    <div class="alert alert-danger alert-dismissible fade show ms-1 me-1 mt-1" role="alert">
+                        <%= error.msg %>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                <% })%>
+            <% } %>
+            <form class="row" action="/signup" method="post">
+                <div class="card-body card-body-signup">
+                    <div class="col-md-12 ">
+                        <label class="form-label add-post-label">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" value="<%= typeof username != 'undefined' ? username : '' %>" placeholder="Please write your username" >
+                    </div>
+                    <div class="col-md-12 mt-2">
+                        <label for="validationCustom03" class="form-label">Email</label>
+                        <input class="form-control" id="email" name="email" value="<%= typeof email != 'undefined' ? email : '' %>"  placeholder="Please write your email" >
+                    </div>
+                    <div class="col-md-12 mt-2">
+                        <label for="validationCustom03" class="form-label">Password</label>
+                        <input class="form-control" type="password" id="password" name="password" value="<%= typeof password != 'undefined' ? password : '' %>"   placeholder="Please write your password" >
+                    </div>
+                    <div class="col-md-12 mt-2">
+                        <label for="validationCustom03" class="form-label">Repeat Password</label>
+                        <input class="form-control" type="password" id="password2" name="password2" value="<%= typeof password2 != 'undefined' ? password2 : '' %>"  placeholder="Please repeat your password" >
+                    </div>
+                    <div class="col-md-12 mt-4">
+                        <h6>Already have an account ? <a class="" href="/login"  type="submit">Log In </a></h6>
+                    </div>
+                </div>
+                <div class="card-footer no-border">
+                    <div class="display-flex-between">
+                        <button class="btn signup-btn" type="submit">Sign Up</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

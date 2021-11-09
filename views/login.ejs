@@ -1,0 +1,42 @@
+<div class="display-flex mt-5">
+    <div class="card-signin ">
+        <div class="card no-border">
+            <div class="card-header card-header-signin text-center no-border">
+                <h5 class="card-title mt-1"> Log in</h5>
+            </div>
+            <% if(typeof errors != "undefined"){ %>
+                <% errors.forEach((error) => { %>
+                    <div class="alert alert-danger alert-dismissible fade show ms-1 me-1 mt-1" role="alert">
+                        <%= error.msg %>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                <% })%>
+            <% } %>
+            <form class="row" action="/login" method="post">
+                <div class="card-body card-body-signin">
+                    <div class="col-md-12 ">
+                        <label class="form-label add-post-label">Email</label>
+                        <input type="text" class="form-control" id="email" name="email" value="<%= typeof email != 'undefined' ? email : '' %>"  placeholder="Please write your email" >
+                    </div>
+                    <div class="mt-4 ">
+                        <label class="form-label">Password</label>
+                        <input class="form-control" type="password" id="password" name="password" value="<%= typeof password != 'undefined' ? password : '' %>"   placeholder="Please write your password" >
+                    </div>
+                    <div class=" mt-4">
+                        <h6>Don't have an account ? <a class="" href="/signup" >Sign up </a></h6>
+                    </div>
+                </div>
+                <div class="card-footer card-footer-addPost no-border">
+                    <div class="display-flex-between">
+                        <button class="btn signin-btn" type="submit">Log in</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="cover-signin">
+        <img class="cover-signin-pic" src="../img/3918929 copy 2.jpg" alt="login image">
+    </div>
+</div>
+
+

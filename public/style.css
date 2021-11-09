@@ -1,0 +1,256 @@
+
+/* -------------------------- universal --------------------------------------------------------------------------- */
+body{
+    margin-left: 8%;
+    margin-right: 8%;
+}
+h2{
+    width: 40%;
+    margin: auto;
+    margin-bottom : 20px ;
+    margin-right: 10%;
+}
+.display-flex-between{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.display-inline{
+    display: inline;
+}
+.display-flex{
+    display: flex;
+}
+.display-flex-between{
+    display: flex;
+    justify-content: space-between;
+}
+.btn{
+    height: 40px;
+    width: 90px;
+}
+.no-border {
+    border: 0;
+    box-shadow: none; /* You may want to include this as bootstrap applies these styles too */
+}
+
+/* -------------------------- Homepage --------------------------------------------------------------------------- */
+.number-tweet{
+    color: #F5B400;
+}
+.home-img{
+    width: 100%;
+}
+.home-picture{
+    width: 80%;
+    height: auto;
+    margin-left: 10%;
+}
+.tweet-title{
+    text-align: center;
+    width: 50% ;
+    margin: auto;
+    color: #1C2E36;
+}
+.add-question-btn{
+    width: 100% ;
+    background-color: #F5B400;
+    color: #1C2E36;
+    box-shadow: 0 1px 4px 0 gray, 0 1px 4px 0 gray;
+}
+.card-header-home{
+    background-color: #F5B400 ;
+    color: #1C2E36;
+}
+.card-home{
+    width: 80%;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 gray, 0 6px 20px 0 gray;
+}
+.btn-seemore{
+    width: 80%;
+    background-color: #FFD85F;
+    color: #1C2E36;
+    box-shadow: 0 1px 4px 0 gray, 0 1px 4px 0 gray;
+}
+.card-description {
+    line-height: 0.5;
+}
+
+/* -------------------------- website header --------------------------------------------------------------------------- */
+.btn-right{
+    margin-top: 60px;
+    color: #203291 ;
+}
+.btn-right-user{
+    margin-top: 35px;
+}
+.logo{
+    width: 200px ;
+    height: auto;
+}
+.web-title{
+    margin-top: 10px;
+    margin-left: 60px;
+}
+.btn-login{
+    background-color: #00BEA4;
+    color: #1C2E36 ;
+    box-shadow: 0 1px 4px 0 gray, 0 1px 4px 0 gray;
+}
+.btn-signup{
+    background-color: #BEA6EF;
+    color: #203291 ;
+    box-shadow: 0 1px 4px 0 gray, 0 1px 4px 0 gray;
+}
+.btn-logout{
+
+    margin: auto;
+    box-shadow: 0 1px 4px 0 gray, 0 1px 4px 0 gray;
+}
+.header-left{
+    margin-left: 10px;
+}
+
+/* -------------------------- Sign in --------------------------------------------------------------------------- */
+.card-signin {
+    width: 30%;
+    height: min-content;
+    margin-top: 5%;
+    box-shadow: 0 4px 8px 0 gray, 0 6px 20px 0 gray;
+}
+.cover-signin-pic{
+    width: 90%;
+    height: auto;
+    margin-left: 50px;
+    margin-top: -40px;
+}
+.card-header-signin{
+    background-color: #00BEA4;
+    color: #1C2E36;
+}
+.card-body-signin{
+    color: #1C2E36;
+}
+.signin-btn{
+    height: 40px;
+    width: 90%;
+    margin: auto;
+    background-color: #00BEA4;
+    color: #1C2E36 ;
+    box-shadow: 0 1px 4px 0 gray, 0 1px 4px 0 gray;   
+}
+.cover-signin{
+    width: 70%;
+}
+/* -------------------------- sign up --------------------------------------------------------------------------- */
+
+.card-header-signup{
+    background-color: #BEA6EF;
+}
+.card-title-signup , .card-body-signup{
+    color: #203291 ;
+}
+.signup-btn{
+    height: 40px;
+    width: 90%;
+    margin: auto;
+    background-color: #BEA6EF;
+    color: #203291 ;
+    box-shadow: 0 1px 4px 0 gray, 0 1px 4px 0 gray;   
+}
+.signup-card{
+    width: 30%;
+    margin-top: 5%;
+    box-shadow: 0 4px 8px 0 gray, 0 6px 20px 0 gray;
+}
+.cover-signup-pic {
+    width: 100%;
+    height: auto;
+}
+.cover-signup {
+    width: 70%;
+}
+/* -------------------------- add question --------------------------------------------------------------------------- */
+.add-question{
+    width: 70%;
+    margin: auto;
+    margin-top: -40px;
+}
+.add-question-pic{
+    width: 100%;
+    height: auto;
+}
+.add-question-card{
+    width: 90%;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 gray, 0 6px 20px 0 gray;
+}
+.card-header-question{
+    background-color: #FF9501;
+    color: #005482 ;
+}
+.btn-add-question{
+    background-color: #FF9501;
+    color: #005482 ;
+    width: 250px;
+    box-shadow: 0 1px 4px 0 gray, 0 1px 4px 0 gray;   
+}
+/* -------------------------- question&answer --------------------------------------------------------------------------- */
+
+.answer-images{
+    width: 60%;
+    margin: auto;
+
+}
+.answer-image{
+    width: 100%;
+    height: auto;
+    margin-top: -20px;
+}
+.answer-card{
+    margin-top: -42px;
+}
+.card-header-answer{
+    background-color: #FA9746;
+    color: #1D448A;
+    display: inline-flex;
+}
+.answer-btn{
+    background-color: #AECDFB ;
+    color: #1D448A ;
+    height: 40px;
+    width: 90%;
+}
+.answer-creator{
+    color: #1D448A ;
+}
+.answer-description{
+    line-height: 0.5;
+}
+.answer-position{
+    width: 90%;
+    margin: auto;
+}
+.delete-answer{
+    height: 25px;
+}
+.question-delete-btn{
+    border: none;
+    background-color: none;
+    display: inline;
+    
+}
+.question-delete-img{
+    width: 30px ;
+    height: 30px;
+}
+.card-title-answer{
+    width: 100%;
+    margin: auto;
+    margin-bottom: 5px;
+}
+.question-creator-date{
+    line-height: 0.6;
+
+}

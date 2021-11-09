@@ -1,0 +1,36 @@
+
+<div class="card add-question-card  no-border">
+    <div class="card-header card-header-question text-center">
+        <h5 class="card-title mt-1"> Add a Question</h5>
+    </div>
+    <div class="card-body">
+        <% if(typeof errors != "undefined"){ %>
+            <% errors.forEach((error) => { %>
+                <div class="alert alert-danger alert-dismissible fade show ms-1 me-1 mt-1" role="alert">
+                    <%= error.msg %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <% })%>
+        <% } %>
+        <form class="row add-post" action="/addQuestion" method="post">
+                <div class="col-md-12 ">
+                    <label class="form-label add-post-label">Question</label>
+                    <input type="text" class="form-control" id="question" name="question" value="<%= typeof question != 'undefined' ? question : '' %>" placeholder="Please write your question" >
+                </div>
+                <div class="col-md-12 mt-2">
+                    <label for="validationCustom03" class="form-label">Description</label>
+                    <textarea class="form-control" id="description" name="description"  value="<%= typeof description != 'undefined' ? description : '' %>" placeholder="Please write your description" ></textarea>
+                </div>
+            </div>
+            <div class="card-footer no-border">
+                    <button class="btn btn-add-question" type="submit">Add</button>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="add-question">
+    <img class="add-question-pic" src="../img/5176883.jpg" alt="add question">
+</div>
+

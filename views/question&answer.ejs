@@ -1,0 +1,62 @@
+<div class="answer-images">
+    <img class="answer-image" src="../img/10162.jpg" alt="add question picture">
+</div>
+<div class="col-sm-12 mt-4 ">
+    <div class="card card-home no-border answer-card mb-2">
+        <div class="card-header card-header-answer no-border">
+            <% if(user && question.user.id === user.id){ %>
+            <form action="/question/<%= question._id %>/deleteQuestion" method="post">
+                <button class="question-delete-btn" type="submit"><img class="question-delete-img" src="../img/211651_close_round_icon.png" alt="close"></button>
+            </form>
+            <% } %>
+                <h4 class="card-title mt-1 text-center card-title-answer"> <%= question.question %> </h4>
+        </div>
+
+        <div class="card-body no-border ">
+            <div class="display-flex-between">
+                <p class="card-text dislay-flex"><%= question.description %> </p>
+                <div class="question-creator-date mb-5">
+                    <p class="card-text dislay-inline text-muted"> <%= question.createdAt.toDateString() %> </p>
+                </div>
+            </div>
+            <% if(typeof errors != "undefined"){ %>
+                <% errors.forEach((error) => { %>
+                    <div class="alert alert-danger alert-dismissible fade show ms-1 me-1 mt-1" role="alert">
+                        <%= error.msg %>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                <% })%>
+            <% } %>
+            <form class="row" action="/question/<%= question._id %>" method="post">
+                    <div class="col-md-9 ">
+                        <input type="text" class="form-control" id="answer" name="answer" value="<%= typeof answer != 'undefined' ? answer : '' %>"  placeholder="Please write answer" >
+                    </div>
+                    <div class="col-md-3 ">
+                        <button class="btn answer-btn" type="submit">Send Answer</button>
+                    </div>
+            </form>
+            
+        </div>
+            <% answers.forEach((answer)=>{ %>
+                <div class="card-footer no-border mb-3 ">
+                    <div class="mt-3 answer-description answer-position">
+                        <div class="display-flex-between">
+                            <h5 class="answer-creator"><%= answer.user.username%> </h5>
+                            <% if(user && answer.user.id === user.id){ %>
+                            <form action="/question/<%= question._id %>/<%= answer._id %>/deleteAnswer" method="post">
+                                <button class="delete-answer btn-danger" type="submit">Delete</button>
+                            </form>
+                            <%}%>
+                        </div>
+                        <div class="display-flex-between">
+                            <p class="card-text dislay-flex"><%= answer.answer%></p>
+                            <p class="card-text dislay-inline text-muted"><%= answer.createdAt.toDateString() %>  </p>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+            
+    </div>
+</div>
+
+

@@ -1,0 +1,42 @@
+
+<div class="tweet-title">
+    <div class="add-tweet mb-2">
+        <h4 class="display-inline">There are </h4>
+        <h4 class="number-tweet display-inline"> <%= question.length %></h4>
+        <h4 class="display-inline">questions</h4>
+    </div>
+    <a class="btn add-question-btn mb-1" href="/addQuestion"  type="submit">Add Question </a>
+</div>
+
+<div class="home-pic">
+    <img class="home-picture" src="../img/5576597.jpg" alt="homepage image">
+</div>
+
+<div class="row">
+    <% question.forEach((question) => { %>
+        <div class="col-sm-6">
+            <div class="card card-home no-border mb-2">
+                <div class="card-header text-center card-header-home no-border">
+                    <h5 class="card-title "> <%= question.question %></h5>
+                </div>
+                <div class="card-body no-border">
+                    <p class="card-text text-center"><%= question.description %> </p>
+                        <div class="card-description mt-5">
+                            <p class="card-text text-left text-muted"><strong>Created By : </strong> <%= question.user.username %> </p>
+                            <p class="card-text text-left text-muted"><strong>Created At : </strong> <%= question.createdAt.toDateString() %> </p>
+                        </div>
+                </div>
+                <div class="card-footer no-border text-center mb-3 ">
+                    <a href="/question/<%= question._id%> " class="btn btn-seemore">See More</a>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+</div>
+
+
+
+
+
+
+
