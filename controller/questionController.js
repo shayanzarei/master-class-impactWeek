@@ -110,8 +110,7 @@ const editAnswer = async (req, res) => {
         })
     }
     if(req.method === 'POST'){
-        answer.answer = req.body.answer
-        await answer.save() ;
+        await answerModel.findByIdAndUpdate(req.params.id , req.body) ;
         res.redirect(`/question/${answer.question}`)
     }
 }
@@ -125,10 +124,7 @@ const editQuestion = async (req , res) => {
         })
     }
     if(req.method === 'POST'){
-        question.question = req.body.question
-        question.description = req.body.description
-
-        await question.save() ;
+        await questionModel.findByIdAndUpdate(req.params.id, req.body)
         res.redirect(`/question/${question._id}`)
     }
 }
