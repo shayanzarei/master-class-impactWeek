@@ -9,14 +9,18 @@
                 <button class="question-delete-btn" type="submit"><img class="question-delete-img" src="../img/211651_close_round_icon.png" alt="close"></button>
             </form>
             <% } %>
-                <h4 class="card-title mt-1 text-center card-title-answer"> <%= question.question %> </h4>
+            <h4 class="card-title mt-1 text-center card-title-answer"> <%= question.question %> </h4>
+            <% if(user && question.user.id === user.id){ %>
+                <a href="/question/<%= question._id %>/edit-question/"><img src="../img/1976055_edit_edit document_edit file_edited_editing_icon copy.png" class="edit-icon" alt="edit question icon"></a>
+            <% } %>
         </div>
 
         <div class="card-body no-border ">
             <div class="display-flex-between">
                 <p class="card-text dislay-flex"><%= question.description %> </p>
                 <div class="question-creator-date mb-5">
-                    <p class="card-text dislay-inline text-muted"> <%= question.createdAt.toDateString() %> </p>
+                    <p class="card-text dislay-inline text-muted"> Create At : <%= question.createdAt.toDateString() %> </p>
+                    <p class="card-text dislay-inline text-muted"> Create By : <%= question.user.username %> </p>
                 </div>
             </div>
             <% if(typeof errors != "undefined"){ %>
@@ -45,6 +49,7 @@
                             <% if(user && answer.user.id === user.id){ %>
                             <form action="/question/<%= question._id %>/<%= answer._id %>/deleteAnswer" method="post">
                                 <button class="delete-answer btn-danger" type="submit">Delete</button>
+                                <a class="btn-primary btn-sm" href="/question/<%= answer._id %>/edit-answer/"> Edit</a>
                             </form>
                             <%}%>
                         </div>

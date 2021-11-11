@@ -91,7 +91,7 @@ const addAnswer = async (req, res) => {
 
 const deleteQuestion = async (req, res) => {
     const question = await questionModel.findByIdAndDelete(req.params.id)
-    await answerModel.deleteMany({question})
+    await answerModel.deleteMany({ question })
     res.redirect('/')
 }
 
@@ -101,11 +101,45 @@ const deleteAnswer = async (req, res) => {
     res.redirect(`/question/${req.params.questionID}`)
 }
 
+const editAnswer = async (req, res) => {
+    const answer = await answerModel.findById(req.params.id)
+    if(req.method === 'GET'){
+        res.render('editAnswer' , {
+            pageTitle : 'Edit Answer',
+            answer
+        })
+    }
+    if(req.method === 'POST'){
+        answer.answer = req.body.answer
+        await answer.save() ;
+        res.redirect(`/question/${answer.question}`)
+    }
+}
+
+const editQuestion = async (req , res) => {
+    const question = await questionModel.findById(req.params.id)
+    if(req.method === 'GET'){
+        res.render('editQuestion' , {
+            pageTitle : 'Edit Question',
+            question
+        })
+    }
+    if(req.method === 'POST'){
+        question.question = req.body.question
+        question.description = req.body.description
+
+        await question.save() ;
+        res.redirect(`/question/${question._id}`)
+    }
+}
+
 
 module.exports = {
     addQuestion,
     showQuestion,
     addAnswer,
     deleteQuestion,
-    deleteAnswer
+    deleteAnswer,
+    editAnswer,
+    editQuestion
 }
