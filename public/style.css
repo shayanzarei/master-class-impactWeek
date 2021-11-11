@@ -232,8 +232,11 @@ h2{
     width: 90%;
     margin: auto;
 }
-.delete-answer{
+.delete-answer {
     height: 25px;
+    width: 70px;
+    border-radius: 5px;
+
 }
 .question-delete-btn{
     border: none;
@@ -252,5 +255,11 @@ h2{
 }
 .question-creator-date{
     line-height: 0.5;
+}
 
+.edit-icon{
+    width: 80%;
+    height: auto;
+    text-align: center;
+    margin-right: -10px;
 }
