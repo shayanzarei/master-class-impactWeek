@@ -1,10 +1,12 @@
 const jwt = require('jsonwebtoken');
 const User = require('../model/userModel');
+require('dotenv').config()
+
 
 const checkUser = (req, res, next) => {
     const token = req.cookies.jwt;
     if(token){
-        jwt.verify(token, 'shayan secure text', (err, decoded) => {
+        jwt.verify(token, process.env.JWT_SECURE_KEY, (err, decoded) => {
             if(err){
                 res.locals.user = null;
                 next();
@@ -34,7 +36,7 @@ const isLogin = (req, res, next) => {
 
     //check json web token is valid
     if (token) {
-        jwt.verify(token, 'shayan secure text', (err, decodedToken) => {
+        jwt.verify(token, process.env.JWT_SECURE_KEY, (err, decodedToken) => {
             if (err) {
                 res.redirect("/login");
             } else {
