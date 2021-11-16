@@ -53,4 +53,4 @@ app.use(authRoute);
 app.use(questionRoute);
 
 
-app.listen(2020,() => console.log('port 2020 ready'))
+app.listen(process.env.PORT || 2020,() => console.log('port 2020 ready'))
