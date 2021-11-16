@@ -14,15 +14,15 @@
             <% } %>
             <form class="row" action="/login" method="post">
                 <div class="card-body card-body-signin">
-                    <div class="col-md-12 ">
+                    <div class="col-md-12 ps-2 pe-2 ">
                         <label class="form-label add-post-label">Email</label>
                         <input type="text" class="form-control" id="email" name="email" value="<%= typeof email != 'undefined' ? email : '' %>"  placeholder="Please write your email" >
                     </div>
-                    <div class="mt-4 ">
+                    <div class="mt-4 ps-2 pe-2">
                         <label class="form-label">Password</label>
                         <input class="form-control" type="password" id="password" name="password" value="<%= typeof password != 'undefined' ? password : '' %>"   placeholder="Please write your password" >
                     </div>
-                    <div class=" mt-4">
+                    <div class=" mt-4 ps-2 pe-2">
                         <h6>Don't have an account ? <a class="" href="/signup" >Sign up </a></h6>
                     </div>
                 </div>

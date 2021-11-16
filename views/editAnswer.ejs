@@ -1,0 +1,12 @@
+<img class="edit-answer-image" src="/img/13038.jpg" alt="edit answer">
+
+<form class="row edit-answer-form" action="/question/<%= answer._id %>/edit-answer/" method="post">
+    <div class="col-md-7 ">
+    </div>
+    <div class="col-md-7 ">
+        <input type="text" class="form-control input-edit-answer" id="answer" name="answer" value="<%= answer.answer %>"  placeholder="Please write answer" >
+    </div>
+    <div class="col-md-3 ">
+        <button class="btn edit-answer-btn" type="submit">Edit Answer</button>
+    </div>
+</form>

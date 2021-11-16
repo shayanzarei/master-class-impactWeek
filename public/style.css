@@ -232,8 +232,11 @@ h2{
     width: 90%;
     margin: auto;
 }
-.delete-answer{
+.delete-answer {
     height: 25px;
+    width: 70px;
+    border-radius: 5px;
+
 }
 .question-delete-btn{
     border: none;
@@ -251,6 +254,68 @@ h2{
     margin-bottom: 5px;
 }
 .question-creator-date{
-    line-height: 0.6;
+    line-height: 0.5;
+}
 
+.edit-icon{
+    width: 80%;
+    height: auto;
+    text-align: center;
+    margin-right: -10px;
+}
+.a-tag-design{
+    text-decoration: none;
+}
+/* -------------------------- editAnswer --------------------------------------------------------------------------- */
+
+.edit-answer-image{
+    width: 50%;
+    height: auto;
+}
+.edit-answer-btn{
+    background-color: #F99746 ;
+    color: #2B468A ;
+    height: 40px;
+    width: 90%;
+    box-shadow: 0 4px 8px 0 gray, 0 6px 20px 0 gray;
+}
+.edit-answer-block{
+    margin-left: 50px;
+}
+.edit-answer-form{
+    margin-top: -40px;
+    margin-left: 40px;
+    
+}
+.input-edit-answer{
+    box-shadow: 0 4px 8px 0 gray, 0 6px 20px 0 gray;
+
+}
+
+/* -------------------------- editQuestion --------------------------------------------------------------------------- */
+
+
+.edit-question-img{
+    width: 50%;
+    height: auto;
+}
+
+.edit-question{
+    display: flex;
+    justify-content: space-around;
+}
+.edit-question-card{
+    width: 100%;
+    margin: auto;
+    margin-left: -300px;
+    box-shadow: 0 4px 8px 0 gray, 0 6px 20px 0 gray;
+}
+.card-header-edit-question{
+    background-color: #F3CCEE;
+    color: #2C434E ;
+}
+.btn-edit-question{
+    color: #2C434E ;
+    width: 100%;
+    background-color: #F3CCEE;
 }

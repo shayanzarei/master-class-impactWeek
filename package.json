@@ -13,6 +13,7 @@
     "bcrypt": "^5.0.1",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.5",
+    "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "email-validator": "^2.0.4",
     "express": "^4.17.1",

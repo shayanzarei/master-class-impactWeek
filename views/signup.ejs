@@ -20,23 +20,23 @@
             <% } %>
             <form class="row" action="/signup" method="post">
                 <div class="card-body card-body-signup">
-                    <div class="col-md-12 ">
-                        <label class="form-label add-post-label">Username</label>
-                        <input type="text" class="form-control" id="username" name="username" value="<%= typeof username != 'undefined' ? username : '' %>" placeholder="Please write your username" >
+                    <div class="col-md-12 ps-2 pe-2">
+                        <label class="form-label add-post-label ">Username</label>
+                        <input type="text" class="form-control " id="username" name="username" value="<%= typeof username != 'undefined' ? username : '' %>" placeholder="Please write your username" >
                     </div>
-                    <div class="col-md-12 mt-2">
+                    <div class="col-md-12 mt-2 ps-2 pe-2">
                         <label for="validationCustom03" class="form-label">Email</label>
                         <input class="form-control" id="email" name="email" value="<%= typeof email != 'undefined' ? email : '' %>"  placeholder="Please write your email" >
                     </div>
-                    <div class="col-md-12 mt-2">
+                    <div class="col-md-12 mt-2 ps-2 pe-2">
                         <label for="validationCustom03" class="form-label">Password</label>
                         <input class="form-control" type="password" id="password" name="password" value="<%= typeof password != 'undefined' ? password : '' %>"   placeholder="Please write your password" >
                     </div>
-                    <div class="col-md-12 mt-2">
+                    <div class="col-md-12 mt-2 ps-2 pe-2">
                         <label for="validationCustom03" class="form-label">Repeat Password</label>
                         <input class="form-control" type="password" id="password2" name="password2" value="<%= typeof password2 != 'undefined' ? password2 : '' %>"  placeholder="Please repeat your password" >
                     </div>
-                    <div class="col-md-12 mt-4">
+                    <div class="col-md-12 mt-4 ps-2 pe-2">
                         <h6>Already have an account ? <a class="" href="/login"  type="submit">Log In </a></h6>
                     </div>
                 </div>

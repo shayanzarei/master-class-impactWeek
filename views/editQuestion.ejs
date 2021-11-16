@@ -1,0 +1,26 @@
+
+
+<div class="edit-question mt-5"> 
+    <div>
+        <img class="edit-question-img" src="/img/5258221.jpg" alt="edit question picture">
+    </div>
+    <div class="card edit-question-card  no-border">
+        <div class="card-header card-header-edit-question text-center">
+            <h5 class="card-title mt-1"> Edit Question</h5>
+        </div>
+        <div class="card-body">
+            <form class="row " action="/question/<%= question._id %>/edit-question/" method="post">
+                <div class="col-md-12 ">
+                    <label class="form-label ">Question</label>
+                    <input type="text" class="form-control" id="question" name="question" value="<%= question.question %>" >
+                </div>
+                <div class="col-md-12 mt-1">
+                    <label for="validationCustom03" class="form-label">Description</label>
+                    <textarea class="form-control" id="description" name="description"> <%= question.description %> </textarea>
+                </div>
+                <div class="card-footer no-border">
+                    <button class="btn btn-edit-question" type="submit">Edit Question</button>
+                </div>
+            </form>
+        </div>    
+</div>

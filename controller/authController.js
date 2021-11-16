@@ -3,11 +3,16 @@ const emailValidator = require('email-validator')
 const bcrypt = require('bcrypt');
 const {createToken} = require('../middleware/createToken');
 
+
+//signup page with 2 function for GET & POST
 const signup = async (req, res) => {
+    //signup GET
     if (req.method === 'GET') {
         res.render('signup', { pageTitle: 'Signup' })
     }
+    //signup POST
     if (req.method === 'POST') {
+        //put req.body(input of signup page) inside 
         const { username, email, password, password2 } = req.body;
 
         let errors = [];
@@ -31,6 +36,7 @@ const signup = async (req, res) => {
         if (password !== password2) {
             errors.push({ msg: 'Passwords do not match' })
         }
+        //if we have at least one error
         if (errors.length > 0){
             res.render('signup' , {
                 pageTitle:'Signup',
@@ -40,9 +46,9 @@ const signup = async (req, res) => {
                 password,
                 password2,
             })
-        } else{
+        } else{ //every things okay with validation input then ...
             user = await User.findOne({email: email})
-            if(user){
+            if(user){ //if email before registered  
                 errors.push({ msg: 'Email is already registered' })
                 res.render('signup', {
                     pageTitle:'Signup',
@@ -52,7 +58,9 @@ const signup = async (req, res) => {
                     password,
                     password2
                 })
-            } else {
+            //if every thing okay (we don't have any input validation error and no
+            // user register as same as email input in our DB before )
+            } else { 
                 const newUser = new User({
                     username,
                     email,
@@ -75,15 +83,18 @@ const signup = async (req, res) => {
     }
 }
 
-
+//login page with 2 function for GET & POST
 const login = async (req, res) => {
+    //login show page (GET)
     if (req.method === 'GET') {
         res.render('login' , {pageTitle : 'Login'})
     }
+    //login POST 
     if (req.method === 'POST') {
         const { email, password} = req.body;
         let errors = [];
 
+        // checked required field
         if(!email || !password){
             errors.push({ msg: 'Please fill in all fields' })
         }
@@ -95,6 +106,7 @@ const login = async (req, res) => {
         if (password && password.length < 6) {
             errors.push({ msg: 'Password should be more than 6 character' })
         }
+        //if we have at least one error
         if (errors.length > 0){
             res.render('login' , {
                 pageTitle:'Login',
@@ -102,7 +114,9 @@ const login = async (req, res) => {
                 email,
                 password,
             })
-        } else{
+        //if every thing okay (we don't have any input validation error and no
+        // user register as same as email input in our DB before )
+        } else{ 
             user = await User.findOne({email: email})
             if(!user){
                 errors.push({ msg: 'Email is not exist' })
