@@ -10,6 +10,7 @@ const signup = async (req, res) => {
     if (req.method === 'GET') {
         res.render('signup', { pageTitle: 'Signup' })
     }
+    
     //signup POST
     if (req.method === 'POST') {
         //put req.body(input of signup page) inside 
